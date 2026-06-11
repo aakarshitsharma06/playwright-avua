@@ -9,6 +9,7 @@ export class AvuaEmployerPage {
   readonly publishButton: Locator;
   currentJobTitle: string = "";
 
+
   constructor(page: Page) {
     this.page = page;
     this.postJobButton = page.getByRole('button', { name: /Post a Job/i }).first();
