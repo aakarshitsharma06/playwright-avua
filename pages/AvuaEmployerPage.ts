@@ -85,8 +85,7 @@ export class AvuaEmployerPage {
     await cityInput.fill('New York City');
 
     // Global applications
-    const globalBtn = this.page.getByRole('button', { name: /Yes, allow global applicants/i }).first();
-    await globalBtn.click();
+    // (This option seems to have been removed from the UI)
   }
 
   async injectReactStateOverrides(amount = 100, contractLength = "6", jobTitle?: string): Promise<void> {

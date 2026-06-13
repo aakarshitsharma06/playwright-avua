@@ -13,7 +13,7 @@ test.describe('Employer Job Posting Flow', () => {
 
   test('should successfully post a contract job as an employer', async ({ page }) => {
     const employerPage = new AvuaEmployerPage(page);
-    const email = 'aakarshit.sharma+0@avua.com';
+    const email = 'pranjil+test@avua.com';
     const password = 'Test@123';
     const jobTitle = `Playwright Test Engineer ${Date.now()}`;
     console.log('--- STARTING TEST ---');

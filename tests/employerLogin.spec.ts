@@ -4,7 +4,7 @@ import { AvuaEmployerPage } from '../pages/AvuaEmployerPage';
 const EMAIL = 'pranjil+test@avua.com';
 const PASS  = 'Test@123';
 
-test('AEP_01 - Valid login redirects to dashboard', async ({ page }) => {
+test('TC1 - Valid login redirects to dashboard', async ({ page }) => {
   const employer = new AvuaEmployerPage(page);
   await employer.login(EMAIL, PASS);
   await expect(page).toHaveURL(/\/employer\/dashboard/i);
