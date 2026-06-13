@@ -11,5 +11,6 @@ export default defineConfig({
     screenshot: 'on',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
+    viewport: { width: 1920, height: 1080 },
   },
 });

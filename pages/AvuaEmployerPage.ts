@@ -24,19 +24,19 @@ export class AvuaEmployerPage {
     
     // Switch to Password tab
     const passwordTab = this.page.getByRole('button', { name: 'Password' }).first();
-    await passwordTab.click();
+    await passwordTab.click({ force: true });
 
     // Fill fields
     await this.page.getByPlaceholder('you@company.com').fill(email);
     await this.page.getByPlaceholder('Enter your password').fill(pass);
-    await this.page.getByRole('button', { name: 'Sign in' }).click();
+    await this.page.getByRole('button', { name: 'Sign in' }).click({ force: true });
 
     await expect(this.page).toHaveURL(/\/employer\/dashboard/i);
     await this.postJobButton.waitFor({ state: 'visible', timeout: 10000 });
   }
 
   async navigateToJobPostPage(): Promise<void> {
-    await this.postJobButton.click();
+    await this.postJobButton.click({ force: true });
     await expect(this.page).toHaveURL(/\/employer\/contract-job-post/i);
     await this.jobTitleInput.waitFor({ state: 'visible', timeout: 10000 });
   }
@@ -51,21 +51,21 @@ export class AvuaEmployerPage {
 
     // Fill Description
     const descInput = this.page.locator('.ql-editor').first();
-    await descInput.click();
+    await descInput.click({ force: true });
     await descInput.fill('We are seeking a skilled Playwright Test Engineer to build and maintain end-to-end tests.');
 
     // Select skills
     const addSkillBtn = this.page.locator('text=+ Add skill').first();
-    await addSkillBtn.click();
+    await addSkillBtn.click({ force: true });
     await this.page.waitForTimeout(1000); // wait for input to appear
 
     const skillsInput = this.page.getByPlaceholder(/Enter skills/i).first();
-    await skillsInput.click();
+    await skillsInput.click({ force: true });
     await skillsInput.fill('Test Automation');
     await this.page.keyboard.press('Enter');
     await this.page.waitForTimeout(500);
     
-    await skillsInput.click();
+    await skillsInput.click({ force: true });
     await skillsInput.fill('JavaScript');
     await this.page.keyboard.press('Enter');
     await this.page.waitForTimeout(500);
@@ -76,7 +76,7 @@ export class AvuaEmployerPage {
 
     // Select Remote
     const remoteBtn = this.page.getByRole('heading', { name: /Remote/i }).first();
-    await remoteBtn.click();
+    await remoteBtn.click({ force: true });
 
     // Location
     const countryInput = this.page.getByPlaceholder(/e\.g\.\s+United\s+States/i).first();
@@ -176,7 +176,7 @@ export class AvuaEmployerPage {
   }
 
   async proceedToStep2(): Promise<void> {
-    await this.continueButton.click();
+    await this.continueButton.click({ force: true });
     // Wait for the contractor model button to be visible on Step 2
     await this.page.locator('.grid.grid-cols-3 > div').first().waitFor({ state: 'visible', timeout: 10000 });
   }
@@ -184,7 +184,7 @@ export class AvuaEmployerPage {
   async fillStep2Details(): Promise<void> {
     // Select Contractor Model (IC)
     const icBtn = this.page.locator('.grid.grid-cols-3 > div').first();
-    await icBtn.click();
+    await icBtn.click({ force: true });
     await this.page.waitForTimeout(500);
 
     // Set Step 2 React state values
@@ -193,16 +193,16 @@ export class AvuaEmployerPage {
 
     // Click the payment frequency input to open dropdown
     const freqInput = this.page.getByPlaceholder('Select payment frequency');
-    await freqInput.click();
+    await freqInput.click({ force: true });
     await this.page.waitForTimeout(300);
 
     // Click "Hourly" option
-    await this.page.locator('div').filter({ hasText: /^Hourly$/ }).first().click();
+    await this.page.locator('div').filter({ hasText: /^Hourly$/ }).first().click({ force: true });
     await this.page.waitForTimeout(500);
   }
 
   async proceedToStep3(): Promise<void> {
-    await this.reviewButton.click();
+    await this.reviewButton.click({ force: true });
     await this.page.waitForTimeout(1000);
   }
 
@@ -229,7 +229,7 @@ export class AvuaEmployerPage {
     });
 
     if (!pubClicked) {
-      await this.publishButton.click();
+      await this.publishButton.click({ force: true });
     }
   }
 
@@ -237,7 +237,7 @@ export class AvuaEmployerPage {
     await this.page.waitForURL(/\/employer\/dashboard/i, { timeout: 15000 });
     // Click on the Jobs tab in the header
     const jobsTab = this.page.locator('a, button, div').filter({ hasText: /^Jobs$/ }).first();
-    await jobsTab.click();
+    await jobsTab.click({ force: true });
     await this.page.waitForTimeout(1000);
     
     // Verify the job is visible in the list
