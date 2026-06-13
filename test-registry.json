@@ -1,0 +1,80 @@
+[
+  {
+    "id": "bfc6af4a",
+    "description": "FILE-LEVEL TEST: Runs ALL tests inside applicantSignUp.spec.ts. Tests included: Applicant Sign-Up Flow, should sign up applicant via resume upload and AI-prefilled form.",
+    "specPath": "tests/applicantSignUp.spec.ts",
+    "grep": null
+  },
+  {
+    "id": "c161f1e2",
+    "description": "SPECIFIC TEST CASE: \"Applicant Sign-Up Flow\". Use this to run ONLY this specific test.",
+    "specPath": "tests/applicantSignUp.spec.ts",
+    "grep": "Applicant Sign-Up Flow"
+  },
+  {
+    "id": "b086b4e4",
+    "description": "SPECIFIC TEST CASE: \"should sign up applicant via resume upload and AI-prefilled form\". Use this to run ONLY this specific test.",
+    "specPath": "tests/applicantSignUp.spec.ts",
+    "grep": "should sign up applicant via resume upload and AI-prefilled form"
+  },
+  {
+    "id": "dbdeaf2e",
+    "description": "FILE-LEVEL TEST: Runs ALL tests inside employerJobPost.spec.ts. Tests included: Employer Job Posting Flow, should successfully post a contract job as an employer.",
+    "specPath": "tests/employerJobPost.spec.ts",
+    "grep": null
+  },
+  {
+    "id": "e0f7e2cb",
+    "description": "SPECIFIC TEST CASE: \"Employer Job Posting Flow\". Use this to run ONLY this specific test.",
+    "specPath": "tests/employerJobPost.spec.ts",
+    "grep": "Employer Job Posting Flow"
+  },
+  {
+    "id": "5f362a0c",
+    "description": "SPECIFIC TEST CASE: \"should successfully post a contract job as an employer\". Use this to run ONLY this specific test.",
+    "specPath": "tests/employerJobPost.spec.ts",
+    "grep": "should successfully post a contract job as an employer"
+  },
+  {
+    "id": "cf5cef87",
+    "description": "FILE-LEVEL TEST: Runs ALL tests inside employerLogin.spec.ts. Tests included: TC1 - Valid login redirects to dashboard, TC3 - Sign-in is not clickable when email and password are empty, TC4 - Success message is shown and OTP is requested when valid email is submitted, TC5 - Displays user doesnt exist when unregistered email is entered, TC6 - Send sign-in code button is disabled when email field is empty, TC7 - Employer is redirected to forgot password page when clicking Forgot password link.",
+    "specPath": "tests/employerLogin.spec.ts",
+    "grep": null
+  },
+  {
+    "id": "8bc28a16",
+    "description": "SPECIFIC TEST CASE: \"TC1 - Valid login redirects to dashboard\". Use this to run ONLY this specific test.",
+    "specPath": "tests/employerLogin.spec.ts",
+    "grep": "TC1 - Valid login redirects to dashboard"
+  },
+  {
+    "id": "3a479456",
+    "description": "SPECIFIC TEST CASE: \"TC3 - Sign-in is not clickable when email and password are empty\". Use this to run ONLY this specific test.",
+    "specPath": "tests/employerLogin.spec.ts",
+    "grep": "TC3 - Sign-in is not clickable when email and password are empty"
+  },
+  {
+    "id": "8ea10956",
+    "description": "SPECIFIC TEST CASE: \"TC4 - Success message is shown and OTP is requested when valid email is submitted\". Use this to run ONLY this specific test.",
+    "specPath": "tests/employerLogin.spec.ts",
+    "grep": "TC4 - Success message is shown and OTP is requested when valid email is submitted"
+  },
+  {
+    "id": "f50cfd35",
+    "description": "SPECIFIC TEST CASE: \"TC5 - Displays user doesnt exist when unregistered email is entered\". Use this to run ONLY this specific test.",
+    "specPath": "tests/employerLogin.spec.ts",
+    "grep": "TC5 - Displays user doesnt exist when unregistered email is entered"
+  },
+  {
+    "id": "c734452a",
+    "description": "SPECIFIC TEST CASE: \"TC6 - Send sign-in code button is disabled when email field is empty\". Use this to run ONLY this specific test.",
+    "specPath": "tests/employerLogin.spec.ts",
+    "grep": "TC6 - Send sign-in code button is disabled when email field is empty"
+  },
+  {
+    "id": "2f85c265",
+    "description": "SPECIFIC TEST CASE: \"TC7 - Employer is redirected to forgot password page when clicking Forgot password link\". Use this to run ONLY this specific test.",
+    "specPath": "tests/employerLogin.spec.ts",
+    "grep": "TC7 - Employer is redirected to forgot password page when clicking Forgot password link"
+  }
+]

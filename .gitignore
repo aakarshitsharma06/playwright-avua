@@ -3,3 +3,7 @@ test-results/
 playwright-report/
 screenshots/
 .DS_Store
+.env
+.playwright-mcp/
+test-gemini.js
+

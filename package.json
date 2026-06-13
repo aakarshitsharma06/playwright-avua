@@ -9,7 +9,9 @@
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "start:testbot": "node server.js",
+    "generate-registry": "node scripts/generate-registry.js"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,10 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.60.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "ws": "^8.21.0"
   }
 }
