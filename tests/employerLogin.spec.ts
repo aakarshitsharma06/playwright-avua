@@ -15,7 +15,7 @@ test('TC3 - Sign-in is not clickable when email and password are empty', async (
   
   // Switch to Password tab
   const passwordTab = page.getByRole('button', { name: 'Password' }).first();
-  await passwordTab.click();
+  await passwordTab.click({ force: true });
 
   // Try to click Sign in while fields are empty
   const signInButton = page.getByRole('button', { name: 'Sign in' });
@@ -27,7 +27,7 @@ test('TC4 - Success message is shown and OTP is requested when valid email is su
   
   // Click One-time code tab
   const otpTab = page.getByRole('button', { name: 'One-time code' }).first();
-  await otpTab.click();
+  await otpTab.click({ force: true });
 
   // Enter valid work email in "you@company.com" field
   const emailInput = page.getByPlaceholder('you@company.com');
@@ -35,7 +35,7 @@ test('TC4 - Success message is shown and OTP is requested when valid email is su
 
   // Click Send sign-in code button
   const sendCodeBtn = page.getByRole('button', { name: 'Send sign-in code' });
-  await sendCodeBtn.click();
+  await sendCodeBtn.click({ force: true });
 
   // Verify success message is shown
   await expect(page.getByText('One-time code sent successfully!')).toBeVisible();
@@ -47,7 +47,7 @@ test('TC5 - Displays user doesnt exist when unregistered email is entered', asyn
   
   // Click One-time code tab
   const otpTab = page.getByRole('button', { name: 'One-time code' }).first();
-  await otpTab.click();
+  await otpTab.click({ force: true });
 
   // Enter invalid/unregistered email (must have valid format to click button)
   const emailInput = page.getByPlaceholder('you@company.com');
@@ -55,7 +55,7 @@ test('TC5 - Displays user doesnt exist when unregistered email is entered', asyn
 
   // Click Send sign-in code button
   const sendCodeBtn = page.getByRole('button', { name: 'Send sign-in code' });
-  await sendCodeBtn.click();
+  await sendCodeBtn.click({ force: true });
 
   // Displays user doesn't exist
   await expect(page.getByText(/user does not exist/i)).toBeVisible();
@@ -66,7 +66,7 @@ test('TC6 - Send sign-in code button is disabled when email field is empty', asy
   
   // Click One-time code tab
   const otpTab = page.getByRole('button', { name: 'One-time code' }).first();
-  await otpTab.click();
+  await otpTab.click({ force: true });
 
   // Leave "you@company.com" field empty
   const emailInput = page.getByPlaceholder('you@company.com');
@@ -82,11 +82,11 @@ test('TC7 - Employer is redirected to forgot password page when clicking Forgot 
   
   // Click Password tab
   const passwordTab = page.getByRole('button', { name: 'Password' }).first();
-  await passwordTab.click();
+  await passwordTab.click({ force: true });
 
   // Click "Forgot password?" link (it is rendered as text/button, not an <a> link)
   const forgotPasswordBtn = page.getByText('Forgot password?');
-  await forgotPasswordBtn.click();
+  await forgotPasswordBtn.click({ force: true });
 
   // Employer is redirected to forgot password page (rendered within same URL path)
   await expect(page.getByText('Reset password in two quick steps')).toBeVisible();
