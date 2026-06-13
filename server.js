@@ -62,10 +62,12 @@ async function runTest(testDef) {
     const child = spawn('npx', args, { env: { ...process.env, FORCE_COLOR: '0' } });
 
     child.stdout.on('data', (data) => {
+      console.log(data.toString());
       broadcastLog(data.toString());
     });
     
     child.stderr.on('data', (data) => {
+      console.error(data.toString());
       broadcastLog(data.toString());
     });
 
