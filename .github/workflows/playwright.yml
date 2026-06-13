@@ -1,9 +1,17 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [ '**' ]
   pull_request:
-    branches: [ main, master ]
+    # Runs on PRs to any branch
+  repository_dispatch:
+    types: [frontend-pr-update]
+  workflow_dispatch:
+    inputs:
+      frontend_branch:
+        description: 'Frontend branch to test against (if applicable)'
+        required: false
+        default: 'main'
 jobs:
   test:
     timeout-minutes: 60
