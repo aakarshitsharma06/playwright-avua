@@ -2,7 +2,8 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
-  workers: 1,
+  fullyParallel: !process.env.RENDER,
+  workers: process.env.RENDER ? 1 : undefined,
   timeout: 60000,
   retries: 1,
   reporter: [['html']],
