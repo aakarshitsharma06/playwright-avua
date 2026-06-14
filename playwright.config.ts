@@ -6,7 +6,10 @@ export default defineConfig({
   workers: process.env.RENDER ? 1 : undefined,
   timeout: 60000,
   retries: 1,
-  reporter: [['html']],
+  reporter: [
+    ['html'],
+    ['./utils/jiraReporter.ts']
+  ],
   use: {
     baseURL: 'https://avua.com',
     screenshot: 'on',
